@@ -1,0 +1,140 @@
+
+/* FULL SCREEN */
+.police-bg {
+  height: 100vh;
+  background: radial-gradient(circle at top, #0b1b3a, #05060f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial;
+  color: white;
+  overflow: hidden;
+}
+
+/* RED BLUE POLICE LIGHT EFFECT */
+.lights {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(0,0,255,0.2), rgba(255,0,0,0.2));
+  animation: pulse 3s infinite alternate;
+}
+
+@keyframes pulse {
+  from { opacity: 0.2; }
+  to { opacity: 0.6; }
+}
+
+/* MAIN CARD */
+.chat-card {
+  width: 900px;
+  max-width: 95%;
+  height: 90vh;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(18px);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+/* HEADER */
+.header {
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+  background: rgba(0,0,0,0.4);
+}
+
+/* CHAT BOX */
+.chat-box {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+/* MESSAGE */
+.msg {
+  display: flex;
+  margin: 10px 0;
+}
+
+.msg.user {
+  justify-content: flex-end;
+}
+
+.bubble {
+  max-width: 70%;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  position: relative;
+}
+
+/* USER STYLE */
+.msg.user .bubble {
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+}
+
+/* ACTIONS */
+.actions {
+  display: flex;
+  gap: 5px;
+  margin-top: 8px;
+}
+
+.actions button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+/* INPUT */
+.input-box {
+  display: flex;
+  padding: 10px;
+  background: rgba(0,0,0,0.4);
+}
+
+.input-box input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
+
+.input-box button {
+  margin-left: 10px;
+  background: #4f46e5;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+/* TYPING */
+.typing {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.typing span {
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  animation: bounce 1s infinite;
+}
+
+.typing span:nth-child(2) { animation-delay: 0.2s; }
+.typing span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+  50% { transform: translateY(-6px); }
+}
